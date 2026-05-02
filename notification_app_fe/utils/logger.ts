@@ -3,7 +3,7 @@
  * This is a reusable logging function that sends logs to the test server
  */
 
-const LOG_API_URL = 'http://20.207.122.201/evaluation-service/logs';
+const LOG_API_URL = '/api/evaluation-service/logs';
 
 /**
  * Log function - Sends log messages to the test server

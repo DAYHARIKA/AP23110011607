@@ -39,6 +39,7 @@ export default function NotificationsPage() {
   const [error, setError] = useState('');
   const [filter, setFilter] = useState<string>('all');
   const [token, setToken] = useState<string>('');
+  const [viewedNotifications, setViewedNotifications] = useState<string[]>([]);
 
   useEffect(() => {
     const savedToken = localStorage.getItem('auth_token');
@@ -47,6 +48,11 @@ export default function NotificationsPage() {
       return;
     }
     setToken(savedToken);
+    
+    // Load viewed notifications from localStorage
+    const viewed = JSON.parse(localStorage.getItem('viewed_notifications') || '[]');
+    setViewedNotifications(viewed);
+    
     fetchNotifications(savedToken);
   }, [router]);
 
@@ -63,7 +69,7 @@ export default function NotificationsPage() {
       setLoading(true);
       await Log('frontend', 'info', 'api', 'Fetching notifications', authToken);
 
-      const response = await fetch('http://20.207.122.201/evaluation-service/notifications', {
+      const response = await fetch('/api/evaluation-service/notifications', {
         headers: {
           'Authorization': `Bearer ${authToken}`
         }
@@ -89,12 +95,12 @@ export default function NotificationsPage() {
     if (!viewed.includes(id)) {
       viewed.push(id);
       localStorage.setItem('viewed_notifications', JSON.stringify(viewed));
+      setViewedNotifications([...viewed]);
     }
   };
 
   const isViewed = (id: string) => {
-    const viewed = JSON.parse(localStorage.getItem('viewed_notifications') || '[]');
-    return viewed.includes(id);
+    return viewedNotifications.includes(id);
   };
 
   const getTypeColor = (type: string) => {
@@ -155,9 +161,13 @@ export default function NotificationsPage() {
               <Grid item xs={12} md={6} key={notification.ID}>
                 <Card
                   sx={{
-                    borderLeft: isViewed(notification.ID) ? 'none' : '4px solid #1976d2',
+                    borderLeft: isViewed(notification.ID) ? '4px solid #e0e0e0' : '4px solid #1976d2',
                     cursor: 'pointer',
-                    bgcolor: isViewed(notification.ID) ? 'background.paper' : '#e3f2fd'
+                    bgcolor: isViewed(notification.ID) ? 'background.paper' : '#e3f2fd',
+                    opacity: isViewed(notification.ID) ? 0.7 : 1,
+                    '&:hover': {
+                      bgcolor: isViewed(notification.ID) ? '#f5f5f5' : '#bbdefb'
+                    }
                   }}
                   onClick={() => markAsViewed(notification.ID)}
                 >

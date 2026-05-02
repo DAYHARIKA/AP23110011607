@@ -88,8 +88,7 @@ function getTopPriorityNotifications(notifications, n = 10) {
  */
 async function main() {
   // You need to replace this with your actual token from the auth API
-  const TOKEN = 'YOUR_ACCESS_TOKEN_HERE';
-  
+  const TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiYXVkIjoiaHR0cDovLzIwLjI0NC41Ni4xNDQvZXZhbHVhdGlvbi1zZXJ2aWNlIiwiZW1haWwiOiJkYXloYXJpa2Ffa3VuYW1Ac3JtYXAuZWR1LmluIiwiZXhwIjoxNzc3NzAyMjEwLCJpYXQiOjE3Nzc3MDEzMTAsImlzcyI6IkFmZm9yZCBNZWRpY2FsIFRlY2hub2xvZ2llcyBQcml2YXRlIExpbWl0ZWQiLCJqdGkiOiI0YTBlYmZjNC1mZTRlLTQyZDQtYTc5My1iYTZlNzFlY2I1ZjMiLCJsb2NhbGUiOiJlbi1JTiIsIm5hbWUiOiJrdW5hbSBkYXkgaGFyaWthIiwic3ViIjoiYjJkZjkxYzctNjg0NS00MDA2LWEzNTMtY2FmYmM2ZDQ2NDhmIn0sImVtYWlsIjoiZGF5aGFyaWthX2t1bmFtQHNybWFwLmVkdS5pbiIsIm5hbWUiOiJrdW5hbSBkYXkgaGFyaWthIiwicm9sbE5vIjoiYXAyMzExMDAxMTYwNyIsImFjY2Vzc0NvZGUiOiJRa2JweEgiLCJjbGllbnRJRCI6ImIyZGY5MWM3LTY4NDUtNDAwNi1hMzUzLWNhZmJjNmQ0NjQ4ZiIsImNsaWVudFNlY3JldCI6InZCYVFYZUd5bXFycUREU1cifQ.qRkHnn1QmwrdNaL5ICUegFq1O1EP3X2_6NJaIaaSZJ4';
   console.log('Fetching notifications...');
   await Log('frontend', 'info', 'api', 'Fetching notifications from API', TOKEN);
   

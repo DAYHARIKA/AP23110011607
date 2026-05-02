@@ -108,6 +108,57 @@ node priority_inbox.js
 
 Edit `priority_inbox.js` and replace `YOUR_ACCESS_TOKEN_HERE` with your actual token.
 
+## Architecture Design
+
+### System Overview
+The Campus Notifications Application follows a modular architecture with clear separation of concerns:
+
+### 1. Logging Middleware Layer
+- **Purpose**: Centralized logging for both frontend and backend
+- **Components**: Reusable Log function with API integration
+- **Features**: Stack, level, package, message, and token-based logging
+- **Integration**: Used throughout application for comprehensive monitoring
+
+### 2. Priority Logic Layer
+- **Purpose**: Core business logic for notification prioritization
+- **Algorithm**: Weight-based sorting (Placement=3, Result=2, Event=1) + recency factor
+- **Implementation**: Standalone script with fetch, calculate, sort, and return functions
+- **Testing**: Command-line execution with detailed output
+
+### 3. Frontend Application Layer
+- **Framework**: Next.js 14 with React 18 and TypeScript
+- **UI Library**: Material UI for consistent, responsive design
+- **State Management**: React hooks with localStorage persistence
+- **Routing**: App Router with nested routes for different views
+
+### 4. API Integration Layer
+- **Authentication**: Bearer token-based security
+- **Error Handling**: Comprehensive error boundaries and user feedback
+- **CORS Management**: Proxy configuration for seamless API communication
+- **Data Flow**: Fetch → Process → Display → Log
+
+### Component Architecture
+
+#### Frontend Components
+```
+App Layout
+├── Home Page (Token Entry)
+├── Notifications Page
+│   ├── Filter Component
+│   ├── Notification Cards
+│   └── Viewed State Management
+└── Priority Inbox Page
+    ├── Top N Selector
+    ├── Priority List
+    └── Numbered Display
+```
+
+#### Data Flow
+1. **Authentication**: Token → localStorage → API calls
+2. **Data Fetching**: API → State → UI Components
+3. **User Interactions**: Click → State Update → UI Refresh → Log
+4. **Persistence**: localStorage → State Synchronization
+
 ### Project Structure
 
 ```
@@ -135,8 +186,20 @@ Edit `priority_inbox.js` and replace `YOUR_ACCESS_TOKEN_HERE` with your actual t
 │   ├── tsconfig.json
 │   └── next.config.js
 ├── notification_system_design.md # Design document
+├── documentation/
+│   └── screenshots/              # Comprehensive output documentation
 └── .gitignore
 ```
+
+### Complete Code Implementation
+
+The repository contains complete, production-ready code with:
+- **Full API Integration**: All endpoints implemented with proper authentication
+- **Error Handling**: Comprehensive error boundaries and user feedback
+- **Responsive Design**: Mobile-first approach with Material UI
+- **State Management**: React hooks with localStorage persistence
+- **Logging Integration**: Every operation logged with proper parameters
+- **TypeScript Support**: Type-safe implementation throughout frontend
 
 ### Features
 

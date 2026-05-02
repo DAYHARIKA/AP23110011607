@@ -158,30 +158,42 @@ All application screenshots are available in the `/documentation/screenshots/` f
 - **Shows:** Terminal output with top 10 priority notifications
 - **Key Features:** Priority calculation (Placement > Result > Event), sorting by recency
 
+![Stage 1 Output](documentation/screenshots/stage1-output.png)
+
 #### 2. Token Authentication (`home-page.png`)
 - **Demonstrates:** Secure token entry interface
 - **Shows:** Clean Material UI design with token input field
 - **Key Features:** Token validation, localStorage persistence
+
+![Home Page](documentation/screenshots/home-page.png)
 
 #### 3. All Notifications Display (`all-notifications.png`)
 - **Demonstrates:** Complete notification listing functionality
 - **Shows:** Grid layout with notification cards, type badges, timestamps
 - **Key Features:** Responsive design, Material UI components
 
+![All Notifications](documentation/screenshots/all-notifications.png)
+
 #### 4. Priority Inbox (`priority-inbox.png`)
 - **Demonstrates:** Top N priority notifications display
 - **Shows:** Numbered priority list with configurable N value
 - **Key Features:** Priority algorithm, real-time updates, visual ranking
+
+![Priority Inbox](documentation/screenshots/priority-inbox.png)
 
 #### 5. Filter Functionality (`filter-demo.png`)
 - **Demonstrates:** Type-based filtering system
 - **Shows:** Filter dropdown, filtered results
 - **Key Features:** Real-time filtering, Placement/Result/Event categories
 
+![Filter Demo](documentation/screenshots/filter-demo.png)
+
 #### 6. Viewed Status Management (`viewed-vs-new.png`)
 - **Demonstrates:** Visual feedback for viewed/unviewed notifications
 - **Shows:** Color difference, "New" badges, opacity changes
 - **Key Features:** State management, localStorage persistence, visual feedback
+
+![Viewed vs New](documentation/screenshots/viewed-vs-new.png)
 
 ### Notes
 

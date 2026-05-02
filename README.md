@@ -150,6 +150,39 @@ Edit `priority_inbox.js` and replace `YOUR_ACCESS_TOKEN_HERE` with your actual t
   - Responsive design for mobile and desktop
   - Extensive logging integration
 
+### Screenshots - Feature Documentation
+All application screenshots are available in the `/documentation/screenshots/` folder:
+
+#### 1. Stage 1 Implementation (`stage1-output.png`)
+- **Demonstrates:** Priority inbox logic working correctly
+- **Shows:** Terminal output with top 10 priority notifications
+- **Key Features:** Priority calculation (Placement > Result > Event), sorting by recency
+
+#### 2. Token Authentication (`home-page.png`)
+- **Demonstrates:** Secure token entry interface
+- **Shows:** Clean Material UI design with token input field
+- **Key Features:** Token validation, localStorage persistence
+
+#### 3. All Notifications Display (`all-notifications.png`)
+- **Demonstrates:** Complete notification listing functionality
+- **Shows:** Grid layout with notification cards, type badges, timestamps
+- **Key Features:** Responsive design, Material UI components
+
+#### 4. Priority Inbox (`priority-inbox.png`)
+- **Demonstrates:** Top N priority notifications display
+- **Shows:** Numbered priority list with configurable N value
+- **Key Features:** Priority algorithm, real-time updates, visual ranking
+
+#### 5. Filter Functionality (`filter-demo.png`)
+- **Demonstrates:** Type-based filtering system
+- **Shows:** Filter dropdown, filtered results
+- **Key Features:** Real-time filtering, Placement/Result/Event categories
+
+#### 6. Viewed Status Management (`viewed-vs-new.png`)
+- **Demonstrates:** Visual feedback for viewed/unviewed notifications
+- **Shows:** Color difference, "New" badges, opacity changes
+- **Key Features:** State management, localStorage persistence, visual feedback
+
 ### Notes
 
 - The frontend directly calls the test server APIs for simplicity
